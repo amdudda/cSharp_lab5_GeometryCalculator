@@ -56,6 +56,7 @@
             this.picShape = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblAnswer = new System.Windows.Forms.Label();
+            this.lblEquations = new System.Windows.Forms.Label();
             this.grpShapes.SuspendLayout();
             this.grpAreaPerimeter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShape)).BeginInit();
@@ -373,12 +374,22 @@
             this.lblAnswer.TabIndex = 23;
             this.lblAnswer.Text = "label6";
             // 
+            // lblEquations
+            // 
+            this.lblEquations.AutoSize = true;
+            this.lblEquations.Location = new System.Drawing.Point(296, 213);
+            this.lblEquations.Name = "lblEquations";
+            this.lblEquations.Size = new System.Drawing.Size(35, 13);
+            this.lblEquations.TabIndex = 24;
+            this.lblEquations.Text = "label7";
+            // 
             // GeoCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(489, 296);
+            this.Controls.Add(this.lblEquations);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.picShape);
@@ -441,6 +452,7 @@
         private System.Windows.Forms.PictureBox picShape;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.Label lblEquations;
     }
 }
 

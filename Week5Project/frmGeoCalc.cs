@@ -40,6 +40,7 @@ namespace Week5Project
 
             // set up default image to match autoselection of the rectangle
             picShape.ImageLocation = "..\\..\\..\\images\\rectangle.gif";
+            lblEquations.Text = GetEquations();
         }
 
         private void rdoShape_CheckedChanged(object sender, EventArgs e) {
@@ -51,6 +52,7 @@ namespace Week5Project
             if (rdoTrapezoid.Checked) selShape = "trapezoid";
             if (rdoCircle.Checked) selShape = "circle";
             picShape.ImageLocation = "..\\..\\..\\images\\" + selShape + ".gif";
+            lblEquations.Text = GetEquations();
         }
         
         private void rdoPerimeter_CheckedChanged(object sender, EventArgs e)
@@ -409,6 +411,20 @@ namespace Week5Project
             // verifies input is a number 
             double result;
             return double.TryParse(inputText, out result);
+        }
+
+        private string GetEquations()
+        {
+            Dictionary<string,string> shapeDict = new Dictionary<string,string>();
+            shapeDict.Add("rectangle","area: l * w\nperimeter: 2 * (l + w)");
+             shapeDict.Add("square","area: s * s\nperimeter: 4 * s");
+             shapeDict.Add("parallelogram","area: b * h\nperimeter: 2 * (a + b)");
+             shapeDict.Add("rhombus","area: b * h \nperimeter: 4 * b");
+             shapeDict.Add("triangle","area: (b * h) / 2\nperimeter: a + b + c");
+             shapeDict.Add("trapezoid","area: ((a + b) * h) / 2\nperimeter: a + b + c + d");
+             shapeDict.Add("circle","area: π * r * r\nperimeter: 2 * π * r");
+
+            return "Formulae for " + selShape + ":\n" + shapeDict[selShape];
         }
 
     } // end partial class GeoCalculator
