@@ -406,9 +406,9 @@ namespace Week5Project
             
         }
 
-        private bool ValidateInput(string inputText)  // I think this needs to pass a variable, but I'm not sure yet how I'll handle it.
+        private bool ValidateInput(string inputText)  
         {
-            // verifies input is a number 
+            // verifies inputText is a number 
             double result;
             return double.TryParse(inputText, out result);
         }
