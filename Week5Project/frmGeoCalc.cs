@@ -174,7 +174,7 @@ namespace Week5Project
                         break;
                     }
             }  // end switch-case
-        }
+        } // end function ShowBoxes
 
         private void Calculate (string shape, string calc)
         {
@@ -210,7 +210,7 @@ namespace Week5Project
                     ex.GetType().ToString()
                     );
             }
-        }
+        } // end function Calculate
 
         private string GetArea(string shape)
         {
@@ -282,7 +282,7 @@ namespace Week5Project
 
             // annoying to have two variables, but them's the breaks when working with someone else's code.
             return "Area is: " + result;
-        }
+        } // end function GetArea
 
         private string GetPerimeter(string shape)
         {
@@ -356,7 +356,7 @@ namespace Week5Project
 
             // return our text string 
             return answer;
-        }
+        } // end function GetPerimeter
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -383,15 +383,33 @@ namespace Week5Project
             txt5.Text = "";
             lblAnswer.Text = "";
             btnCalculate.Text = "&Calculate";
-            
-
-        }
+        
+        } // end btnClear_Click
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void TextBoxChanged_TextChanged(object sender, EventArgs e)
+        {
+            TextBox whatChanged = (TextBox)sender;
+            //MessageBox.Show(whatChanged.Text);
+            string textValue = whatChanged.Text;
+            if (!(textValue == "" || ValidateInput(textValue)))
+            {
+                MessageBox.Show("You have entered an invalid value!", "Invalid input");
+                whatChanged.Focus();
+            }
+            
+        }
 
-    }
+        private bool ValidateInput(string inputText)  // I think this needs to pass a variable, but I'm not sure yet how I'll handle it.
+        {
+            // verifies input is a number 
+            double result;
+            return double.TryParse(inputText, out result);
+        }
+
+    } // end partial class GeoCalculator
 }

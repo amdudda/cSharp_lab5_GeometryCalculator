@@ -214,6 +214,7 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(46, 20);
             this.txt1.TabIndex = 6;
+            this.txt1.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt2
             // 
@@ -222,6 +223,7 @@
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(46, 20);
             this.txt2.TabIndex = 8;
+            this.txt2.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt3
             // 
@@ -230,6 +232,7 @@
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(46, 20);
             this.txt3.TabIndex = 10;
+            this.txt3.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt4
             // 
@@ -238,6 +241,7 @@
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(46, 20);
             this.txt4.TabIndex = 12;
+            this.txt4.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt5
             // 
@@ -246,6 +250,7 @@
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(46, 20);
             this.txt5.TabIndex = 14;
+            this.txt5.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // lblNames
             // 
