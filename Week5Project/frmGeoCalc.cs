@@ -426,6 +426,22 @@ namespace Week5Project
 
             return "Formulae for " + selShape + ":\n" + shapeDict[selShape];
         }
+        private string GetModulus() {
+            double operator1 = double.Parse(txt1.Text);
+            double operator2 = double.Parse(txt2.Text);
+            return (operator1 % operator2).ToString();
+        }
+
+        private string GetPercent()
+        {
+            double operator1 = double.Parse(txt1.Text);
+            double operator2 = double.Parse(txt2.Text);
+            double percent = operator1 / operator2;
+            return (percent).ToString("p2");
+        }
+
 
     } // end partial class GeoCalculator
+
+   
 }
