@@ -215,7 +215,7 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(46, 20);
             this.txt1.TabIndex = 6;
-            this.txt1.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
+            this.txt1.Leave += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt2
             // 
@@ -224,7 +224,7 @@
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(46, 20);
             this.txt2.TabIndex = 8;
-            this.txt2.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
+            this.txt2.Leave += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt3
             // 
@@ -233,7 +233,7 @@
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(46, 20);
             this.txt3.TabIndex = 10;
-            this.txt3.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
+            this.txt3.Leave += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt4
             // 
@@ -242,7 +242,7 @@
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(46, 20);
             this.txt4.TabIndex = 12;
-            this.txt4.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
+            this.txt4.Leave += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // txt5
             // 
@@ -251,7 +251,7 @@
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(46, 20);
             this.txt5.TabIndex = 14;
-            this.txt5.TextChanged += new System.EventHandler(this.TextBoxChanged_TextChanged);
+            this.txt5.Leave += new System.EventHandler(this.TextBoxChanged_TextChanged);
             // 
             // lblNames
             // 
@@ -388,7 +388,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(489, 296);
+            this.ClientSize = new System.Drawing.Size(489, 440);
             this.Controls.Add(this.lblEquations);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.btnExit);

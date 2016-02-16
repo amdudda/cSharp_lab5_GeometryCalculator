@@ -440,6 +440,27 @@ namespace Week5Project
             return (percent).ToString("p2");
         }
 
+        private string areaRegularPolygon()
+        {
+            int numSides = int.Parse(txt1.Text);
+            double lenSide = double.Parse(txt2.Text);
+            double lenHypotenuse = double.Parse(txt3.Text);
+
+            double halfSide = .5 * lenSide;
+            double apothem = Math.Sqrt((halfSide * halfSide) + (lenHypotenuse * lenHypotenuse));
+            double areaTriangle = apothem * lenSide;  // a cheat - a right triangle is 1/2 * base * height; we need two of those per side, so just leave off the 1/2.
+            double areaPolygon = numSides * areaTriangle;
+
+            return areaPolygon.ToString("n4");
+
+            // formula = sqrt( (.5 * s)^2 + (r^2)) * s * #_of_sides
+        }
+
+        private bool IsInteger(string toTest)
+        {
+            int result;
+            return int.TryParse(toTest, out result);
+        }
 
     } // end partial class GeoCalculator
 
