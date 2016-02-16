@@ -178,19 +178,37 @@ namespace Week5Project
 
         private void Calculate (string shape, string calc)
         {
-            // MessageBox.Show("shape: " + shape + "\ncalc: " + calc, "Variables");
-            if (calc.Equals("area"))
+            try
             {
-                lblAnswer.Text = GetArea(shape);
+                // throw new Exception();
+                // MessageBox.Show("shape: " + shape + "\ncalc: " + calc, "Variables");
+                if (calc.Equals("area"))
+                {
+                    lblAnswer.Text = GetArea(shape);
+                }
+                else if (calc.Equals("perimeter"))
+                {
+                    lblAnswer.Text = GetPerimeter(shape);
+                }
+                else
+                {
+                    // return both
+                    lblAnswer.Text = GetArea(shape) + "\n" + GetPerimeter(shape);
+                }
             }
-            else if (calc.Equals("perimeter"))
+            catch (FormatException)
             {
-                lblAnswer.Text = GetPerimeter(shape);
+                MessageBox.Show(
+                    "Format Exception: You appear not to have entered a number in one of the text boxes.",
+                    "Error!"
+                    );
             }
-            else
+            catch (Exception ex)
             {
-                // return both
-                lblAnswer.Text = GetArea(shape) + "\n" + GetPerimeter(shape);
+                MessageBox.Show(
+                    "An error occurred: \n" + ex.ToString(),
+                    ex.GetType().ToString()
+                    );
             }
         }
 
