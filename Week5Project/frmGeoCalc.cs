@@ -451,9 +451,16 @@ namespace Week5Project
             double areaTriangle = apothem * lenSide;  // a cheat - a right triangle is 1/2 * base * height; we need two of those per side, so just leave off the 1/2.
             double areaPolygon = numSides * areaTriangle;
 
-            return areaPolygon.ToString("n4");
+            //return areaPolygon.ToString("n4");
 
             // formula = sqrt( (.5 * s)^2 + (r^2)) * s * #_of_sides
+
+            //better formula I worked out in the shower: (n * l * l) / (4 * Math.tan(180/n)
+            //    where n is # of sides and l is the length of one side
+
+            double top = numSides * lenSide * lenSide;
+            double bottom = 4 * Math.Tan(180 / numSides);
+            return (top / bottom).ToString("n4");
         }
 
         private bool IsInteger(string toTest)
