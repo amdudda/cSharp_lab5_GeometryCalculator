@@ -57,6 +57,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.lblAnswer = new System.Windows.Forms.Label();
             this.lblEquations = new System.Windows.Forms.Label();
+            this.rdoPercent = new System.Windows.Forms.RadioButton();
+            this.rdoModulus = new System.Windows.Forms.RadioButton();
+            this.rdoPolygon = new System.Windows.Forms.RadioButton();
             this.grpShapes.SuspendLayout();
             this.grpAreaPerimeter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShape)).BeginInit();
@@ -188,7 +191,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(30, 263);
+            this.btnCalculate.Location = new System.Drawing.Point(33, 329);
             this.btnCalculate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(74, 23);
@@ -199,7 +202,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(168, 263);
+            this.btnClear.Location = new System.Drawing.Point(171, 329);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(74, 23);
@@ -265,6 +268,7 @@
             // 
             // grpShapes
             // 
+            this.grpShapes.Controls.Add(this.rdoPolygon);
             this.grpShapes.Controls.Add(this.rdoRectangle);
             this.grpShapes.Controls.Add(this.rdoSquare);
             this.grpShapes.Controls.Add(this.rdoParallelogram);
@@ -276,21 +280,23 @@
             this.grpShapes.Margin = new System.Windows.Forms.Padding(2);
             this.grpShapes.Name = "grpShapes";
             this.grpShapes.Padding = new System.Windows.Forms.Padding(2);
-            this.grpShapes.Size = new System.Drawing.Size(122, 181);
+            this.grpShapes.Size = new System.Drawing.Size(122, 206);
             this.grpShapes.TabIndex = 1;
             this.grpShapes.TabStop = false;
             this.grpShapes.Text = "Select a shape";
             // 
             // grpAreaPerimeter
             // 
+            this.grpAreaPerimeter.Controls.Add(this.rdoModulus);
+            this.grpAreaPerimeter.Controls.Add(this.rdoPercent);
             this.grpAreaPerimeter.Controls.Add(this.rdoPerimeter);
             this.grpAreaPerimeter.Controls.Add(this.rdoArea);
             this.grpAreaPerimeter.Controls.Add(this.rdoAreaPerimeter);
-            this.grpAreaPerimeter.Location = new System.Drawing.Point(9, 213);
+            this.grpAreaPerimeter.Location = new System.Drawing.Point(12, 238);
             this.grpAreaPerimeter.Margin = new System.Windows.Forms.Padding(2);
             this.grpAreaPerimeter.Name = "grpAreaPerimeter";
             this.grpAreaPerimeter.Padding = new System.Windows.Forms.Padding(2);
-            this.grpAreaPerimeter.Size = new System.Drawing.Size(282, 46);
+            this.grpAreaPerimeter.Size = new System.Drawing.Size(282, 76);
             this.grpAreaPerimeter.TabIndex = 2;
             this.grpAreaPerimeter.TabStop = false;
             this.grpAreaPerimeter.Text = "Select a calculation";
@@ -357,7 +363,7 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(402, 263);
+            this.btnExit.Location = new System.Drawing.Point(405, 329);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 22;
@@ -382,6 +388,41 @@
             this.lblEquations.Size = new System.Drawing.Size(35, 13);
             this.lblEquations.TabIndex = 24;
             this.lblEquations.Text = "label7";
+            // 
+            // rdoPercent
+            // 
+            this.rdoPercent.AutoSize = true;
+            this.rdoPercent.Location = new System.Drawing.Point(32, 42);
+            this.rdoPercent.Name = "rdoPercent";
+            this.rdoPercent.Size = new System.Drawing.Size(80, 17);
+            this.rdoPercent.TabIndex = 3;
+            this.rdoPercent.TabStop = true;
+            this.rdoPercent.Text = "Percentage";
+            this.rdoPercent.UseVisualStyleBackColor = true;
+            this.rdoPercent.CheckedChanged += new System.EventHandler(this.rdoPercent_CheckedChanged);
+            // 
+            // rdoModulus
+            // 
+            this.rdoModulus.AutoSize = true;
+            this.rdoModulus.Location = new System.Drawing.Point(139, 42);
+            this.rdoModulus.Name = "rdoModulus";
+            this.rdoModulus.Size = new System.Drawing.Size(76, 17);
+            this.rdoModulus.TabIndex = 4;
+            this.rdoModulus.TabStop = true;
+            this.rdoModulus.Text = "Remainder";
+            this.rdoModulus.UseVisualStyleBackColor = true;
+            this.rdoModulus.CheckedChanged += new System.EventHandler(this.rdoModulus_CheckedChanged);
+            // 
+            // rdoPolygon
+            // 
+            this.rdoPolygon.AutoSize = true;
+            this.rdoPolygon.Location = new System.Drawing.Point(6, 179);
+            this.rdoPolygon.Name = "rdoPolygon";
+            this.rdoPolygon.Size = new System.Drawing.Size(103, 17);
+            this.rdoPolygon.TabIndex = 7;
+            this.rdoPolygon.TabStop = true;
+            this.rdoPolygon.Text = "Regular Polygon";
+            this.rdoPolygon.UseVisualStyleBackColor = true;
             // 
             // GeoCalculator
             // 
@@ -453,6 +494,9 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblAnswer;
         private System.Windows.Forms.Label lblEquations;
+        private System.Windows.Forms.RadioButton rdoModulus;
+        private System.Windows.Forms.RadioButton rdoPercent;
+        private System.Windows.Forms.RadioButton rdoPolygon;
     }
 }
 

@@ -51,6 +51,7 @@ namespace Week5Project
             if (rdoTriangle.Checked) selShape = "triangle";
             if (rdoTrapezoid.Checked) selShape = "trapezoid";
             if (rdoCircle.Checked) selShape = "circle";
+            if (rdoPolygon.Checked) selShape = "polygon";
             picShape.ImageLocation = "..\\..\\..\\images\\" + selShape + ".gif";
             lblEquations.Text = GetEquations();
         }
@@ -187,6 +188,16 @@ namespace Week5Project
                             // txt2.Visible = true;
                             break;
                         }
+                    case "polygon":
+                    {
+                        label1.Visible = true;
+                        label1.Text = "number of sides";
+                        label2.Visible = true;
+                        label2.Text = "length of one side";
+                        txt1.Visible = true;
+                        txt2.Visible = true;
+                        break;
+                    }
                 }  // end switch-case
             } else if (selCalculation == "percentage") {
                 label1.Visible = true;
@@ -318,6 +329,11 @@ namespace Week5Project
                         result = area;
                         break;
                     }
+                case "polygon":
+                    {
+                        result = areaRegularPolygon();
+                        break;
+                    }
                 default:
                     {
                         // do nothing
@@ -389,6 +405,14 @@ namespace Week5Project
                         double r = double.Parse(txt1.Text);
                         // double d = double.Parse(txt2.Text);
                         double perim = (Math.PI * (2 * r));
+                        answer = "Perimeter is: " + perim.ToString();
+                        break;
+                    }
+                case "polygon":
+                    {
+                        int n = int.Parse(txt1.Text);
+                        double s = double.Parse(txt2.Text);
+                        double perim = n * s;
                         answer = "Perimeter is: " + perim.ToString();
                         break;
                     }
@@ -466,6 +490,7 @@ namespace Week5Project
              shapeDict.Add("triangle","area: (b * h) / 2\nperimeter: a + b + c");
              shapeDict.Add("trapezoid","area: ((a + b) * h) / 2\nperimeter: a + b + c + d");
              shapeDict.Add("circle","area: π * r * r\nperimeter: 2 * π * r");
+             shapeDict.Add("polygon", "area: (n * l * l) / (4 * Math.tan(180/n)\nperimeter: s * n");
 
             return "Formulae for " + selShape + ":\n" + shapeDict[selShape];
         }
@@ -484,7 +509,7 @@ namespace Week5Project
             return operator1 + " is " + (percent).ToString("p2") + " of " + operator2;
         }
 
-        private string areaRegularPolygon()
+        private double areaRegularPolygon()
         {
             int numSides = int.Parse(txt1.Text);
             double lenSide = double.Parse(txt2.Text);
@@ -504,7 +529,7 @@ namespace Week5Project
 
             double top = numSides * lenSide * lenSide;
             double bottom = 4 * Math.Tan(180 / numSides);
-            return (top / bottom).ToString("n4");
+            return (top / bottom);
         }
 
         private bool IsInteger(string toTest)
