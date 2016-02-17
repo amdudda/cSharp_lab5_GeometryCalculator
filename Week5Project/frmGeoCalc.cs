@@ -70,6 +70,16 @@ namespace Week5Project
             selCalculation = rdoAreaPerimeter.Text.ToLower();
         }
 
+        private void rdoPercent_CheckedChanged(object sender, EventArgs e)
+        {
+            selCalculation = rdoPercent.Text.ToLower();
+        }
+
+        private void rdoModulus_CheckedChanged(object sender, EventArgs e)
+        {
+            selCalculation = rdoModulus.Text.ToLower();
+        }
+
         private void calcBtn_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(btnCalculate.Text, "button label");
@@ -88,94 +98,119 @@ namespace Week5Project
 
         private void ShowBoxes()
         {
-            switch (selShape)
+            if (selCalculation != "remainder" && selCalculation != "percentage")
             {
-                case "rectangle":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "length";
-                        label2.Visible = true;
-                        label2.Text = "width";
-                        txt1.Visible = true;
-                        txt2.Visible = true;
-                        break;
-                    }
-                case "square":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "length";
-                        txt1.Visible = true;
-                        break;
-                    }
-                case "parallelogram":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "length";
-                        label2.Visible = true;
-                        label2.Text = "width";
-                        label3.Visible = true;
-                        label3.Text = "height";
-                        txt1.Visible = true;
-                        txt2.Visible = true;
-                        txt3.Visible = true;
-                        break;
-                    }
-                case "rhombus":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "length";
-                        label2.Visible = true;
-                        label2.Text = "height";
-                        txt1.Visible = true;
-                        txt2.Visible = true;
-                        break;
-                    }
-                case "triangle":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "longest side";
-                        label2.Visible = true;
-                        label2.Text = "side 2";
-                        label3.Visible = true;
-                        label3.Text = "side 3";
-                        label4.Visible = true;
-                        label4.Text = "height";
-                        txt1.Visible = true;
-                        txt2.Visible = true;
-                        txt3.Visible = true;
-                        txt4.Visible = true;
-                        break;
-                    }
-                case "trapezoid":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "length of top";
-                        label2.Visible = true;
-                        label2.Text = "length of bottom";
-                        label3.Visible = true;
-                        label3.Text = "side 1";
-                        label4.Visible = true;
-                        label4.Text = "side 2";
-                        label5.Visible = true;
-                        label5.Text = "height";
-                        txt1.Visible = true;
-                        txt2.Visible = true;
-                        txt3.Visible = true;
-                        txt4.Visible = true;
-                        txt5.Visible = true;
-                        break;
-                    }
-                case "circle":
-                    {
-                        label1.Visible = true;
-                        label1.Text = "radius";
-                        // label2.Visible = true;
-                        // label2.Text = "diameter";
-                        txt1.Visible = true;
-                        // txt2.Visible = true;
-                        break;
-                    }
-            }  // end switch-case
+                switch (selShape)
+                {
+                    case "rectangle":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "length";
+                            label2.Visible = true;
+                            label2.Text = "width";
+                            txt1.Visible = true;
+                            txt2.Visible = true;
+                            break;
+                        }
+                    case "square":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "length";
+                            txt1.Visible = true;
+                            break;
+                        }
+                    case "parallelogram":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "length";
+                            label2.Visible = true;
+                            label2.Text = "width";
+                            label3.Visible = true;
+                            label3.Text = "height";
+                            txt1.Visible = true;
+                            txt2.Visible = true;
+                            txt3.Visible = true;
+                            break;
+                        }
+                    case "rhombus":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "length";
+                            label2.Visible = true;
+                            label2.Text = "height";
+                            txt1.Visible = true;
+                            txt2.Visible = true;
+                            break;
+                        }
+                    case "triangle":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "longest side";
+                            label2.Visible = true;
+                            label2.Text = "side 2";
+                            label3.Visible = true;
+                            label3.Text = "side 3";
+                            label4.Visible = true;
+                            label4.Text = "height";
+                            txt1.Visible = true;
+                            txt2.Visible = true;
+                            txt3.Visible = true;
+                            txt4.Visible = true;
+                            break;
+                        }
+                    case "trapezoid":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "length of top";
+                            label2.Visible = true;
+                            label2.Text = "length of bottom";
+                            label3.Visible = true;
+                            label3.Text = "side 1";
+                            label4.Visible = true;
+                            label4.Text = "side 2";
+                            label5.Visible = true;
+                            label5.Text = "height";
+                            txt1.Visible = true;
+                            txt2.Visible = true;
+                            txt3.Visible = true;
+                            txt4.Visible = true;
+                            txt5.Visible = true;
+                            break;
+                        }
+                    case "circle":
+                        {
+                            label1.Visible = true;
+                            label1.Text = "radius";
+                            // label2.Visible = true;
+                            // label2.Text = "diameter";
+                            txt1.Visible = true;
+                            // txt2.Visible = true;
+                            break;
+                        }
+                }  // end switch-case
+            } else if (selCalculation == "percentage") {
+                label1.Visible = true;
+                label1.Text = "This number";
+                label2.Visible = true;
+                label2.Text = "As a percentage of this number";
+                txt1.Visible = true;
+                txt2.Visible = true;
+                // not using a shape, so clear the equation and image
+                lblAnswer.Text = "";
+                picShape.ImageLocation = null;
+                }
+            else if (selCalculation == "remainder")
+            {
+                label1.Visible = true;
+                label1.Text = "The remainder of this";
+                label2.Visible = true;
+                label2.Text = "Divided by this";
+                txt1.Visible = true;
+                txt2.Visible = true;
+                // not using a shape, so clear the equation and image
+                lblAnswer.Text = "";
+                picShape.ImageLocation = null;
+            }
         } // end function ShowBoxes
 
         private void Calculate (string shape, string calc)
@@ -191,6 +226,14 @@ namespace Week5Project
                 else if (calc.Equals("perimeter"))
                 {
                     lblAnswer.Text = GetPerimeter(shape);
+                }
+                else if (calc.Equals("percentage"))
+                {
+                    lblAnswer.Text = GetPercent();
+                }
+                else if (calc.Equals("remainder"))
+                {
+                    lblAnswer.Text = GetModulus();
                 }
                 else
                 {
@@ -429,7 +472,8 @@ namespace Week5Project
         private string GetModulus() {
             double operator1 = double.Parse(txt1.Text);
             double operator2 = double.Parse(txt2.Text);
-            return (operator1 % operator2).ToString();
+            return "The remainder of " + operator1 + " divided by " + operator2 + " is " +
+                (operator1 % operator2).ToString();
         }
 
         private string GetPercent()
@@ -437,19 +481,19 @@ namespace Week5Project
             double operator1 = double.Parse(txt1.Text);
             double operator2 = double.Parse(txt2.Text);
             double percent = operator1 / operator2;
-            return (percent).ToString("p2");
+            return operator1 + " is " + (percent).ToString("p2") + " of " + operator2;
         }
 
         private string areaRegularPolygon()
         {
             int numSides = int.Parse(txt1.Text);
             double lenSide = double.Parse(txt2.Text);
-            double lenHypotenuse = double.Parse(txt3.Text);
+            //double lenHypotenuse = double.Parse(txt3.Text);
 
-            double halfSide = .5 * lenSide;
-            double apothem = Math.Sqrt((halfSide * halfSide) + (lenHypotenuse * lenHypotenuse));
-            double areaTriangle = apothem * lenSide;  // a cheat - a right triangle is 1/2 * base * height; we need two of those per side, so just leave off the 1/2.
-            double areaPolygon = numSides * areaTriangle;
+            //double halfSide = .5 * lenSide;
+            //double apothem = Math.Sqrt((halfSide * halfSide) + (lenHypotenuse * lenHypotenuse));
+            //double areaTriangle = apothem * lenSide;  // a cheat - a right triangle is 1/2 * base * height; we need two of those per side, so just leave off the 1/2.
+            //double areaPolygon = numSides * areaTriangle;
 
             //return areaPolygon.ToString("n4");
 
