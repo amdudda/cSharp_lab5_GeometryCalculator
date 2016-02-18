@@ -221,7 +221,7 @@ namespace Week5Project
                 // not using a shape, so clear the equation and image
                 lblAnswer.Text = "";
                 picShape.ImageLocation = null;
-            }
+            } // end if-else
         } // end function ShowBoxes
 
         private void Calculate (string shape, string calc)
@@ -494,6 +494,8 @@ namespace Week5Project
 
             return "Formulae for " + selShape + ":\n" + shapeDict[selShape];
         }
+
+        // these were generated during class on 2016.02.16:
         private string GetModulus() {
             double operator1 = double.Parse(txt1.Text);
             double operator2 = double.Parse(txt2.Text);
